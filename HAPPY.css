@@ -1,0 +1,221 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fdf6e3;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    overflow-y: auto;   /* Enables vertical scroll */
+    height: 100vh;      /* Full height for body */
+    display: flex;
+    justify-content: center;  /* Centers content horizontally */
+    align-items: center;      /* Centers content vertically */
+    flex-direction: column;
+  }
+  
+  /* Container for content */
+  .container {
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Heading */
+  h1 {
+    margin-top: 150px;
+    color: #e63946;
+    font-size: 2em; /* Responsive font size */
+    margin-bottom: 0.5em;
+  }
+  
+  /* Background video styles */
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* Smooth fade-in effect */
+    display: none;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 10px 20px;
+    background-color: #457b9d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;  /* Scalable font size */
+    transition: transform 0.2s ease;
+    margin: 10px;
+    display: inline-block;
+  }
+  
+  button:hover {
+    background-color: #1d3557;
+  }
+  
+  button:active {
+    transform: scale(0.95); /* Slight shrinking on click */
+  }
+  
+  /* Image grid layout */
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;  /* Full width on small screens */
+    max-width: 500px; /* Max width for larger screens */
+    height: 500px;
+    position: relative;
+    margin: auto;  /* Centers the grid */
+  }
+  
+  /* Image block styles */
+  .image-block {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.5s ease;
+    background-size: 1000% 1000%;
+  }
+  
+  /* Revealed image block */
+  .image-block.revealed {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Confetti canvas */
+  #confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  /* Question section */
+  .question {
+    margin-top: 20px;
+    font-size: 1.5em;  /* Adjusted for better readability on mobile */
+  }
+  
+  /* Options styling */
+  .options {
+    margin-top: 10px;
+  }
+  
+  /* No button */
+  #noBtn {
+    position: relative;
+    font-size: 1.2em;  /* Larger font for mobile users */
+  }
+  
+  /* Lightbox Styles */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .lightbox.hidden {
+    display: none;
+  }
+  
+  .lightbox-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;  /* Ensures the lightbox is not too large */
+  }
+  
+  .lightbox-content p {
+    font-size: 1.2em;  /* Adjust text size for readability */
+    margin: 10px 0;
+  }
+  
+  .lightbox-content button {
+    padding: 10px 20px;
+    background-color: #457b9d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .lightbox-content button:hover {
+    background-color: #1d3557;
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    .image-grid {
+      grid-template-columns: repeat(5, 1fr); /* Fewer columns on smaller screens */
+      height: 300px;
+    }
+  
+    button {
+      font-size: 1.2em;  /* Larger buttons for touch devices */
+      padding: 12px 24px;
+    }
+  
+    .question {
+      font-size: 1.3em;
+    }
+  
+    .lightbox-content p {
+      font-size: 1em; /* Slightly smaller text in the lightbox */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .image-grid {
+      grid-template-columns: 1fr; /* One column on very small screens */
+      height: 250px;
+    }
+  
+    h1 {
+      font-size: 1.2em;
+    }
+  
+    button {
+      width: 100%;  /* Buttons span full width */
+    }
+  
+    .lightbox-content {
+      width: 80%;  /* Slightly larger lightbox */
+    }
+  
+    .lightbox-content button {
+      width: 100%;  /* Full-width buttons in lightbox */
+    }
+  }
+  
