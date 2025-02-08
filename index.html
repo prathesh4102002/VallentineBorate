@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Vallentines!!</title>
+  <link rel="stylesheet" href="HAPPY.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Vallentines!!🎉🌺</h1>
+    <p class="p1">Click The Button For A Surprise!!!</p>
+    <button id="revealBtn">Reveal</button>
+    <div class="image-grid" id="imageGrid"></div>
+    <canvas id="confettiCanvas"></canvas>
+    <div class="question">
+      <p>Will you be my Vallentine??</p>
+      <div class="options">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden video element that will start when the button is pressed -->
+  <video id="backgroundVideo" class="background-video" muted loop>
+    <source src="VIDE1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lightbox-content">
+      <p>Thank You Very MUCH!!</p>
+      <p>Since you have chosen 'yes,' let's meet on Monday, February 7th, with a teddy bear. 🧸</p>
+    </div>
+  </div>
+
+  <script src="HAPPY.js"></script>
+</body>
+</html>
